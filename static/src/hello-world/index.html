@@ -2,15 +2,63 @@
 layout: default
 label: Hello-world
 ---
-<div class="ui segment stacked center aligned">
-  <h1>Jekyll base</h1>
-  <p>
-    Currently there is only this <em>Hello world</em>, and the <a href="/">Pages list</a>.
-    Go ahead, and edit this page, or add new ones.
-  </p>
+<div class="ui container">
+    <div class="ui segment">
+        <div class="ui cards">
 
-  <p>
-    Look in <code>/src/_layouts</code> and <code>/src/_includes</code> to understand how the
-    <code>default</code> layout is created.
-  </p>
+            <!-- Card 1 -->
+            <div class="ui card">
+                <div class="image">
+                    <img src="http://placehold.it/350x150">
+                </div>
+                <div class="content">
+                    <a class="header">Jerusalem</a>
+                    <div class="meta">
+                        <span class="date">Notification opened 5 minutes ago</span>
+                    </div>
+                    <div class="description">
+                        Monitor ID #0065 is non-responsive, do you want me to switch it off?
+                    </div>
+                </div>
+                <div class="extra content">
+                    <div class="ui two buttons">
+                        <div class="ui basic green button">Yes, switch it off</div>
+                        <div class="ui basic red button">No, keep it on</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 1 -->
+            <div class="ui card">
+                <div class="image">
+                    <img src="http://placehold.it/350x150">
+                </div>
+                <div class="content">
+                    <a class="header">Tel-Aviv</a>
+                    <div class="meta">
+                        <span class="date">Notification opened 1 day and 2 hours ago</span>
+                    </div>
+                    <div class="description">
+                        <p>
+                            I see elevated energy consumption in the school yard. It's the <a href="#">holidays</a>, so it shouldn't be so high.
+                        </p>
+
+                        <p>
+                            I have compared the my data with the previous year, and there's about 20% increase (see the <a href="#">comparison graph</a>).
+                        </p>
+                    </div>
+                </div>
+                <div class="extra content">
+                    <div class="description">
+                        <p>
+                            <i class="warning sign icon"></i> Next Automatic Action: If it reaches 30%, I'll send an SMS to <a href="#">Mr. Bob Azulay</a>, unless you tell me otherwise.
+                        </p>
+                        <button class="ui button">
+                        Dismiss it?
+                      </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
