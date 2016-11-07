@@ -23,7 +23,7 @@ configs : Dict String Model
 configs =
     Dict.fromList
         [ ( "localhost", local )
-        , ( "example.com", production )
+        , ( "amitaibu.github.io", production )
         ]
 
 
