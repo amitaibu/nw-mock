@@ -2,7 +2,7 @@ module App.Update exposing (init, update, Msg(..))
 
 import App.Model exposing (..)
 import Config.Model as Config
-import Pages.Counter.Update exposing (Msg)
+import Pages.Notifications.Update exposing (Msg)
 import Pages.Login.Update exposing (Msg)
 import RemoteData exposing (RemoteData(..), WebData)
 import User.Model exposing (..)
@@ -10,7 +10,7 @@ import User.Model exposing (..)
 
 type Msg
     = Logout
-    | PageCounter Pages.Counter.Update.Msg
+    | PageNotifications Pages.Notifications.Update.Msg
     | PageLogin Pages.Login.Update.Msg
     | SetActivePage Page
     | SetConfig Config.Model
@@ -37,15 +37,15 @@ update msg model =
             Logout ->
                 init
 
-            PageCounter msg ->
+            PageNotifications msg ->
                 let
                     ( val, cmds ) =
-                        Pages.Counter.Update.update msg model.pageCounter
+                        Pages.Notifications.Update.update msg model.pageNotifications
 
                     model' =
-                        { model | pageCounter = val }
+                        { model | pageNotifications = val }
                 in
-                    ( model', Cmd.map PageCounter cmds )
+                    ( model', Cmd.map PageNotifications cmds )
 
             PageLogin msg ->
                 let

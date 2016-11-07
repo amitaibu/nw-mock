@@ -8,7 +8,7 @@ import Html.Events exposing (onClick)
 import App.Model exposing (..)
 import App.Update exposing (..)
 import User.Model exposing (..)
-import Pages.Counter.View exposing (..)
+import Pages.Notifications.View exposing (..)
 import Pages.Login.View exposing (..)
 import Pages.MyAccount.View exposing (..)
 import Pages.PageNotFound.View exposing (..)
@@ -28,7 +28,7 @@ view model =
                     , viewMainContent model
                     , pre [ class "ui padded secondary segment" ]
                         [ div [] [ text <| "activePage: " ++ toString model.activePage ]
-                        , div [] [ text <| "pageCounter: " ++ toString model.pageCounter ]
+                        , div [] [ text <| "pageNotifications: " ++ toString model.pageNotifications ]
                         , div [] [ text <| "pageLogin: " ++ toString model.pageLogin ]
                         , div [] [ text <| "user: " ++ toString model.user ]
                         , div [] [ text <| "config: " ++ toString model.config ]
@@ -55,10 +55,10 @@ viewHeader model =
 navbarAnonymous : Model -> List (Html Msg)
 navbarAnonymous model =
     [ a
-        [ classByPage Counter model.activePage
-        , onClick <| SetActivePage Counter
+        [ classByPage Notifications model.activePage
+        , onClick <| SetActivePage Notifications
         ]
-        [ text "Counter" ]
+        [ text "Notifications" ]
     , a
         [ classByPage Login model.activePage
         , onClick <| SetActivePage Login
@@ -71,10 +71,10 @@ navbarAnonymous model =
 navbarAuthenticated : Model -> List (Html Msg)
 navbarAuthenticated model =
     [ a
-        [ classByPage Counter model.activePage
-        , onClick <| SetActivePage Counter
+        [ classByPage Notifications model.activePage
+        , onClick <| SetActivePage Notifications
         ]
-        [ text "Counter" ]
+        [ text "Notifications" ]
     , a
         [ classByPage MyAccount model.activePage
         , onClick <| SetActivePage MyAccount
@@ -126,8 +126,8 @@ viewMainContent model =
         AccessDenied ->
             div [] [ text "Access denied" ]
 
-        Counter ->
-            Html.map PageCounter (Pages.Counter.View.view model.pageCounter)
+        Notifications ->
+            Html.map PageNotifications (Pages.Notifications.View.view model.pageNotifications)
 
         Login ->
             Html.map PageLogin (Pages.Login.View.view model.user model.pageLogin)

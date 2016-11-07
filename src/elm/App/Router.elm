@@ -14,8 +14,8 @@ delta2url previous current =
         AccessDenied ->
             Nothing
 
-        Counter ->
-            Just <| UrlChange NewEntry "/#counter"
+        Notifications ->
+            Just <| UrlChange NewEntry "/#notifications"
 
         Login ->
             Just <| UrlChange NewEntry "/#login"
@@ -35,8 +35,8 @@ location2messages location =
                 "" ->
                     []
 
-                "#counter" ->
-                    [ SetActivePage Counter ]
+                "#notifications" ->
+                    [ SetActivePage Notifications ]
 
                 "#login" ->
                     [ SetActivePage Login ]
