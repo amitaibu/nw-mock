@@ -14,11 +14,13 @@ emptyModel =
         Dict.fromList
             [ ( 1
               , { bundle = NotifyNonResponsive
+                , name = Just "Kitchen"
                 , status = NotificationStatusActive
                 }
               )
             , ( 2
               , { bundle = NotifyHighConsumption
+                , name = Just "School Yard"
                 , status = NotificationStatusActive
                 }
               )

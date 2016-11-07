@@ -17,5 +17,6 @@ type NotificationStatus
 
 type alias Notification =
     { bundle : NotificationBundle
+    , name : Maybe String
     , status : NotificationStatus
     }
