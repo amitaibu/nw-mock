@@ -16,7 +16,6 @@ type NotificationStatus
 
 
 type alias Notification =
-    { id : Int
-    , bundle : NotificationBundle
+    { bundle : NotificationBundle
     , status : NotificationStatus
     }

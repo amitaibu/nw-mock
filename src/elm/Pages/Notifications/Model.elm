@@ -13,8 +13,12 @@ emptyModel =
     { notifications =
         Dict.fromList
             [ ( 1
-              , { id = 1
-                , bundle = NotifyNonResponsive
+              , { bundle = NotifyNonResponsive
+                , status = NotificationStatusActive
+                }
+              )
+            , ( 2
+              , { bundle = NotifyHighConsumption
                 , status = NotificationStatusActive
                 }
               )
