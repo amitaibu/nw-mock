@@ -42,34 +42,34 @@ update msg model =
                     ( val, cmds ) =
                         Pages.Notifications.Update.update msg model.pageNotifications
 
-                    model' =
+                    model_ =
                         { model | pageNotifications = val }
                 in
-                    ( model', Cmd.map PageNotifications cmds )
+                    ( model_, Cmd.map PageNotifications cmds )
 
             PageLogin msg ->
                 let
                     ( val, cmds, user ) =
                         Pages.Login.Update.update backendUrl model.user msg model.pageLogin
 
-                    model' =
+                    model_ =
                         { model
                             | pageLogin = val
                             , user = user
                         }
 
-                    model'' =
+                    model__ =
                         case user of
                             -- If user was successfuly fetched, reditect to my
                             -- account page.
                             Success _ ->
-                                update (SetActivePage MyAccount) model'
-                                    |> fst
+                                update (SetActivePage MyAccount) model_
+                                    |> Tuple.first
 
                             _ ->
-                                model'
+                                model_
                 in
-                    ( model'', Cmd.map PageLogin cmds )
+                    ( model__, Cmd.map PageLogin cmds )
 
             SetActivePage page ->
                 { model | activePage = setActivePageAccess model.user page } ! []

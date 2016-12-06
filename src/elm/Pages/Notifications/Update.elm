@@ -19,10 +19,10 @@ update action model =
 
                 Just notification ->
                     let
-                        notification' =
+                        notification_ =
                             { notification | status = status }
 
-                        notifications' =
-                            Dict.insert notificationId notification' model.notifications
+                        notifications_ =
+                            Dict.insert notificationId notification_ model.notifications
                     in
-                        { model | notifications = notifications' } ! []
+                        { model | notifications = notifications_ } ! []
